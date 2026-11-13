@@ -1,0 +1,11 @@
+{
+  "name": "BRAINROT_BUNKER",
+  "tree": {
+    "$className": "DataModel",
+    "children": [
+      {
+        "$path": "src"
+      }
+    ]
+  }
+}
