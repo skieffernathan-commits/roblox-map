@@ -1,33 +1,27 @@
 # BRAINROT BUNKER: SURVIVE THE NIGHT
 
-This repository contains a Roblox map generator for a stylized multiplayer survival game built around the concept below:
+A Rojo-ready Roblox map prototype with a connected, colorful low-poly layout. The current generator is a **map-building script**; game systems such as saving, combat damage, ownership, upgrades, and a functional leaderboard need their own server scripts.
 
-- Central hub with a circular plaza and day/night clock tower
-- 8 personal bases distributed around the hub
-- 4 themed wildlife zones with increasing difficulty
-- Safe zones, checkpoints, obstacles, and boss arena references
-- A Rojo-ready project layout for easy syncing into Roblox Studio
+## Use in Roblox Studio
 
-## Project layout
+1. Open a new Baseplate experience.
+2. In Explorer, open `ServerScriptService` and add a `Script` named `BrainrotBunkerMap`.
+3. Copy the complete contents of `src/ServerScriptService/BrainrotBunkerMap.server.lua` into it.
+4. Press **Play**. The map appears under `Workspace/BRAINROT_BUNKER`.
+5. If testing only the generated map, delete or disable the old map script first to avoid building two maps.
 
-- `src/ServerScriptService/BrainrotBunkerMap.server.lua` — builds the map and environment when the game starts
-- `default.project.json` — Rojo project definition
+Rojo users can instead open `default.project.json` and sync the project.
 
-## How to use
+## What the redesigned map builds
 
-1. Open the project in Roblox Studio using Rojo.
-2. Sync the project.
-3. Run the game and the `BrainrotBunkerMap` script will generate the full map in `Workspace/BRAINROT_BUNKER`.
+- One continuous 1500 x 1500 stud ground with clear boundaries.
+- A detailed circular hub with clock tower, shop kiosk, leaderboard landmark, lanterns and safe zone.
+- Eight individual base plots, each with a front gate, 10 numbered creature pedestals, upgrade station, turret slot and named spawn.
+- Four visually distinct biomes placed around the hub: Candy Swamp, Pixel Forest, Neon Junkyard, and Volcano Temple.
+- Four 24-stud-wide race lanes plus a complete base-ring road.
+- Eight named creature spawn markers and two named checkpoint arches in every biome.
+- Zone entrance signs, secret nooks, cat easter eggs, landmark clusters and optional obstacle routes.
+- A stepped volcano, summit boss arena, temple idol, pillars and lava channels.
+- Organized `Hub`, `Bases`, `Zones`, `SpawnPoints`, `Obstacles`, `Decor`, `SafeZones`, `Collectibles` and `Enemies` folders inside the generated model.
 
-## Included map features
-
-- 1500 x 1500 stud playable field
-- Hub and ring layout per specification
-- 8 personal bases with pedestals, gate, upgrade station and turret slot
-- Candy Swamp, Pixel Forest, Neon Junkyard and Volcano Temple zones
-- Named spawn points and checkpoints for scripting
-- Mobile-friendly low-detail geometry with folder organization
-
-## Notes
-
-The map is generated procedurally from Lua so it can be tuned easily for building scale, colors, layout spacing, and difficulty.
+The generator uses anchored, simple Parts and moderate detail so it is straightforward to edit in Studio. The map geometry and spawn markers do not by themselves implement monster AI, damage, persistence, base ownership, shop purchases or boss scheduling.
